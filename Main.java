@@ -1,4 +1,4 @@
-package class10;
+package class11;
 
 class Student {
 	
@@ -6,6 +6,7 @@ class Student {
 	private int ID;
 	private double CGPA;
 	private String email;
+	public static int counter = 0;
 	
 	public Student() {
 		
@@ -13,7 +14,7 @@ class Student {
 		this.ID = 0;
 		this.CGPA = 0.0;
 		this.email = "Not Assigned";
-		
+		counter++;
 	}
 	
 	public Student (String name, int ID, double CGPA, String email) {
@@ -22,6 +23,16 @@ class Student {
 		this.ID = ID;
 		this.CGPA = CGPA;
 		this.email = email;
+		counter++;
+	}
+	
+	public Student (Student obj) {
+		
+		this.name = obj.name;
+		this.ID = obj.ID;
+		this.CGPA = obj.CGPA;
+		this.email = obj.email;
+		counter++;
 	}
 	
 	public String getName() { 
@@ -41,7 +52,9 @@ class Student {
 		return this.email;
 	}
 	
-	
+	public static int getCounter() {
+		return counter;
+	}
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -124,7 +137,8 @@ public class Main {
 		
 		arr[9] = new Student ("jkldas", 623, 3.23, "kljh.nahiyan@northsouth.edu");	
 		System.out.print("Name: " + arr[9].getName() + "\nID: " + arr[9].getID() + "\nCGPA: " + arr[9].getCGPA() + "\nEmail: " + arr[9].getEmail());
-
+		System.out.println();
+		System.out.println("Total student number: "+Student.getCounter());
 	}
 
 }
