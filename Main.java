@@ -1,4 +1,4 @@
-package class11;
+package class12;
 
 class Student {
 	
@@ -68,10 +68,25 @@ class Student {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	public double CalculateCGPA() {
+		return this.CGPA;
+	}
+	public double CalculateCGPA(double cg1, double cg2) {
+		return this.CGPA = (cg1+cg2)/2.0;
+	}
+	public double CalculateCGPA(double cg1, double cg2, double cg3) {
+		return this.CGPA = (cg1+cg2+cg3)/3.0;
+	}
+	
+	@Override
+	public String toString() {
+		return "Name: "+name+"\nID: "+ ID + "\nCGPA: "+CGPA + "\nEmail: " + email + "\n";
+	}
 }
 
 
-public class Main {
+public class App {
 
 	public static void main(String[] args) {
 		
@@ -139,6 +154,18 @@ public class Main {
 		System.out.print("Name: " + arr[9].getName() + "\nID: " + arr[9].getID() + "\nCGPA: " + arr[9].getCGPA() + "\nEmail: " + arr[9].getEmail());
 		System.out.println();
 		System.out.println("Total student number: "+Student.getCounter());
+		
+		System.out.println("******************************************************");
+		arr[6].CalculateCGPA();
+		System.out.println("Name: " + arr[6].getName() + "\nID: " + arr[6].getID() + "\nCGPA: " + arr[6].getCGPA() + "\nEmail: " + arr[6].getEmail());
+		arr[6].CalculateCGPA(3.4,2.99);
+		System.out.println("Name: " + arr[6].getName() + "\nID: " + arr[6].getID() + "\nCGPA: " + arr[6].getCGPA() + "\nEmail: " + arr[6].getEmail());
+		arr[6].CalculateCGPA(3.66,4,2.5);
+		System.out.println("Name: " + arr[6].getName() + "\nID: " + arr[6].getID() + "\nCGPA: " + arr[6].getCGPA() + "\nEmail: " + arr[6].getEmail());
+		System.out.println("*************toString*********************************");
+		for(int i = 0; i<10; i++) {
+			System.out.println(arr[i]);
+		}
 	}
 
 }
