@@ -1,5 +1,3 @@
-package class11;
-
 class Employee {
 	
 	private String name;
