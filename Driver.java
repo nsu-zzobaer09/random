@@ -1,4 +1,6 @@
-class Student {
+package class15;
+
+abstract class Student {
 	
 	private String name;
 	private int ID;
