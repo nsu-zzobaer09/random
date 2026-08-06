@@ -98,7 +98,7 @@ class Patient {
     }
 }
 
-public class _2534194042 {
+public class PatientDriver {
     public static void main(String[] args) {
 
         // 1. Create individual patients
